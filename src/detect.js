@@ -30,7 +30,7 @@ window.addEventListener("load", setup)
 
 window.ethereum.on("chainChanged", handleChainChanged)
 
-function handleChainChanged(chainId) {
+function handleChainChanged() {
     window.location.reload()
 }
 
