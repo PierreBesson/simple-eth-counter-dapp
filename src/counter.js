@@ -13,9 +13,11 @@ const contract = new web3.eth.Contract(
     contract_abi,
     contract_address,
 );
-const count = await contract.methods.count().call();
-const counterValue = document.querySelector(".counterValue")
-counterValue.innerHTML = count
+contract.methods.count().call().then((count) => {
+    const counterValue = document.querySelector(".counterValue")
+    counterValue.innerHTML = count
+});
+
 
 const increaseButton = document.querySelector(".increaseButton")
 const decreaseButton = document.querySelector(".decreaseButton")
